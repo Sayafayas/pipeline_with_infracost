@@ -44,26 +44,26 @@ Install Infracost if you plan to run cost estimates locally.
 
 3. **Configure AWS Credentials:**:
 Ensure your AWS credentials are set up correctly. You can use AWS CLI to configure them:
-```bash
-aws configure
-```
+    ```bash
+    aws configure
+    ```
 
 4. **Set Up GitHub Secrets**:
-Go to your repository settings on GitHub.
-Navigate to Settings > Secrets and variables > Actions.
-Add the following secrets:
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-AWS_SESSION_TOKEN (if applicable)
-PAT_TOKEN/GITHUB_TOKEN (your GitHub Personal Access Token for posting comments)
+- Go to your repository settings on GitHub.
+- Navigate to **Settings** > **Secrets and variables** > **Actions**.
+- Add the following secrets:
+- **AWS_ACCESS_KEY_ID**
+- **AWS_SECRET_ACCESS_KEY**
+- **AWS_SESSION_TOKEN** (if applicable)
+- **PAT_TOKEN/GITHUB_TOKEN** (your GitHub Personal Access Token for posting comments)
 
 ## Usage
 1. **Deploying the Infrastructure**
 Local Deployment:
 - To test the deployment locally, navigate to the dev environment directory and run:
-```bash
-terragrunt run-all apply
-```
+    ```bash
+    terragrunt run-all apply
+    ```
 
 2. **Using GitHub Actions**:
 - The GitHub Actions workflow automatically deploys the infrastructure when changes are pushed to the main branch.
@@ -105,18 +105,18 @@ pipeline_with_infracost/
 └── README.md
 ```
 
-- dev/: Contains the terragrunt.hcl files for each component of the development environment (VPC, SG, EC2).
-- modules/: Reusable Terraform modules for VPC, SG, and EC2.
-- .github/workflows/: GitHub Actions workflow configuration.
+- **dev/**: Contains the terragrunt.hcl files for each component of the development environment (VPC, SG, EC2).
+- **modules/**: Reusable Terraform modules for VPC, SG, and EC2.
+- **.github/workflows/**: GitHub Actions workflow configuration.
 
 ## GitHub Actions Workflow 
 
 The GitHub Actions workflow (.github/workflows/cicd.yml) automates the following tasks:
 
-- Terraform Initialization: Initializes the Terraform environment.
-- Terragrunt Formatting: Checks the formatting of terragrunt.hcl files.
-- Infrastructure Deployment: Applies the Terraform configuration via Terragrunt.
-- Infracost Integration: Calculates cost estimates and posts them as comments on pull requests.
+- **Terraform Initialization**: Initializes the Terraform environment.
+- **Terragrunt Formatting**: Checks the formatting of terragrunt.hcl files.
+- **Infrastructure Deployment**: Applies the Terraform configuration via Terragrunt.
+- **Infracost Integration**: Calculates cost estimates and posts them as comments on pull requests.
 
 ## Infracost Integration
 
