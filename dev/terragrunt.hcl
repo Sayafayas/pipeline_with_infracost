@@ -12,6 +12,7 @@ remote_state {
     encrypt        = true
     dynamodb_table = "${local.deployment_prefix}-state-backend"
   }
+  disable_bucket_update = true
 }
 
 # Generate an AWS provider block
