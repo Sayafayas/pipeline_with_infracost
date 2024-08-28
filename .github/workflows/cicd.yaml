@@ -46,9 +46,6 @@ jobs:
         with:
           terragrunt_version: 0.63.2
 
-      - name: Run Terragrunt with S3 update
-        run: terragrunt run-all plan --terragrunt-source-update
-
       - name: Setup Infracost
         if: github.event_name == 'pull_request'
         uses: infracost/actions/setup@v1
