@@ -56,4 +56,3 @@ inputs = {
     "DeploymentPrefix" = local.deployment_prefix
   }
 }
-
