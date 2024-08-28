@@ -12,7 +12,6 @@ This project automates the deployment of AWS infrastructure using Terragrunt, in
 - [GitHub Actions Workflow](#github-actions-workflow)
 - [Infracost Integration](#infracost-integration)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -75,7 +74,8 @@ terragrunt run-all apply
 - When you create or update a pull request, the GitHub Actions workflow will automatically run and post a comment with the Infracost estimate.
 - The comment provides a detailed breakdown of the costs associated with the changes.
 
-**Project Structure**
+## Project Structure
+```css
 pipeline_with_infracost/
 ├── dev/
 │   ├── terragrunt.hcl
@@ -103,12 +103,13 @@ pipeline_with_infracost/
 │       └── cicd.yml
 ├── .gitignore
 └── README.md
+```
 
 - dev/: Contains the terragrunt.hcl files for each component of the development environment (VPC, SG, EC2).
 - modules/: Reusable Terraform modules for VPC, SG, and EC2.
 - .github/workflows/: GitHub Actions workflow configuration.
 
-**GitHub Actions Workflow**
+## GitHub Actions Workflow 
 
 The GitHub Actions workflow (.github/workflows/cicd.yml) automates the following tasks:
 
@@ -117,10 +118,10 @@ The GitHub Actions workflow (.github/workflows/cicd.yml) automates the following
 - Infrastructure Deployment: Applies the Terraform configuration via Terragrunt.
 - Infracost Integration: Calculates cost estimates and posts them as comments on pull requests.
 
-**Infracost Integration**
+## Infracost Integration
 
 Infracost is integrated into the CI/CD pipeline to provide cost estimates for infrastructure changes. It helps in understanding the cost implications of your Terraform changes before they are applied.
 
-**Contributing**
+## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. For major changes, please open an issue to discuss what you would like to change.
