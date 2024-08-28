@@ -1,7 +1,6 @@
 # Configure Terragrunt to automatically store tfstate files in an S3 bucket
 remote_state {
   backend = "s3"
-  disable_bucket_update = true
   generate = {
     path      = "backend.tf"
     if_exists = "overwrite_terragrunt"
@@ -12,6 +11,7 @@ remote_state {
     region         = local.aws_region
     encrypt        = true
     dynamodb_table = "${local.deployment_prefix}-state-backend"
+    disable_bucket_update = true
   }
 }
 
