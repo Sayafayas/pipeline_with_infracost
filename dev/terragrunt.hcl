@@ -6,11 +6,11 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket         = "${local.deployment_prefix}-state-backend"
-    key            = "${path_relative_to_include()}/terraform.tfstate"
-    region         = local.aws_region
-    encrypt        = true
-    dynamodb_table = "${local.deployment_prefix}-state-backend"
+    bucket                = "${local.deployment_prefix}-state-backend"
+    key                   = "${path_relative_to_include()}/terraform.tfstate"
+    region                = local.aws_region
+    encrypt               = true
+    dynamodb_table        = "${local.deployment_prefix}-state-backend"
     disable_bucket_update = true
   }
 }
