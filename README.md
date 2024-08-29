@@ -2,6 +2,8 @@
 
 This project automates the deployment of AWS infrastructure using Terragrunt, integrated with GitHub Actions for continuous deployment. The infrastructure includes a Virtual Private Cloud (VPC), Security Groups (SG), and a Bastion EC2 instance. Infracost is used to estimate the cost of the infrastructure changes, and the results are posted as comments on pull requests.
 
+![Alt text](images/pipeline-with-intracost.drawio.png)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -59,6 +61,7 @@ Ensure your AWS credentials are set up correctly. You can use AWS CLI to configu
 
 ## Usage
 1. **Deploying the Infrastructure**
+
 Local Deployment:
 - To test the deployment locally, navigate to the dev environment directory and run:
     ```bash
